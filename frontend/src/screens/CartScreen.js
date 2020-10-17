@@ -11,7 +11,7 @@ import {
 } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addToCart } from '../actions/cartActions';
+import { addToCart, removeFromCart } from '../actions/cartActions';
 import Message from '../components/Message';
 
 const CartScreen = ({ match, location, history }) => {
@@ -31,7 +31,9 @@ const CartScreen = ({ match, location, history }) => {
     }
   }, [dispatch, qty, productId]);
 
-  const removeFromCartHandler = () => console.log('Removed');
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
+  };
   const checkoutHandler = () => history.push('/login?redirect=shipping'); //if they are not logged in go to login, if they are logged in go to shipping
 
   return (
