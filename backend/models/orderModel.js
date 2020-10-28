@@ -14,7 +14,7 @@ const orderSchema = new Schema(
         image: { type: String, required: true },
         qty: { type: Number, required: true },
         price: { type: Number, required: true },
-        product: {
+        productID: {
           type: Schema.Types.ObjectId,
           required: true,
           ref: 'Product',
