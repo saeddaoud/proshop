@@ -39,6 +39,7 @@ const App = () => {
           <Route path='/admin/orderlist' component={OrderListScreen} />{' '}
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />{' '}
           <Route path='/admin/product/:id/edit' component={ProductEditScreen} />{' '}
+          <Route path='/search/:keyword' component={HomeScreen} />
           <Route exact path='/' component={HomeScreen} />
           {/* the ? is to make id optional*/}
         </Container>
